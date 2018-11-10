@@ -26,7 +26,7 @@ typedef struct Array {
 #define arrayGetFreeMethod(a) ((a)->free)
 #define arrayGetMatchMethod(a) ((a)->match)
 
-Array *arrayGreate();
+Array *arrayCreate();
 
 void arrayInit(Array *array, int size, int typeSize);
 

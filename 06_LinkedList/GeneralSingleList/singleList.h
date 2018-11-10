@@ -1,0 +1,8 @@
+//
+// Created by cxsjt on 11/10/2018.
+//
+
+#ifndef DATASTRUCTURE_SINGLELIST_H
+#define DATASTRUCTURE_SINGLELIST_H
+
+#endif //DATASTRUCTURE_SINGLELIST_H
