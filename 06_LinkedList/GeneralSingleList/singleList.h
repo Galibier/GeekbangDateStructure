@@ -41,12 +41,12 @@ linkedList *listAddNodeTail(linkedList *list, void *value);
 
 linkedList *listInsertNode(linkedList *list, listNode *oldNode, void *value, bool after);
 
-void listDelNode(linkedList *list, ListNode *node);
+void listDelNode(linkedList *list, listNode *node);
 
 
 listNode *listSearchKey(linkedList *list, void *key);
 
-ListNode *listIndex(linkedList *list, long index);
+listNode *listIndex(linkedList *list, long index);
 
 linkedList *listRewind(linkedList *list);
 
