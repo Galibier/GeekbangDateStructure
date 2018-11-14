@@ -1,20 +1,25 @@
 #ifndef DATASTRUCTURE_ARRAYBASEDSTACK_H
 #define DATASTRUCTURE_ARRAYBASEDSTACK_H
 
-template <typename T>
-class ArrayStack{
+template<typename T>
+class ArrayBasedStack {
 public:
-    ArrayStack();
-    ArrayStack(int cnt);
-    ~ArrayStack();
+    ArrayBasedStack();
+
+    ArrayBasedStack(int cnt);
+
+    ~ArrayBasedStack();
 
     void push(const T &data);
+
     void pop();
+
     T top();
+
     int size();
 
 private:
-    int flag;
+    int capacity;
     int cnt;
     T *array;
 };
