@@ -21,10 +21,8 @@ LinkListBaseStack<T>::~LinkListBaseStack() {
     }
     delete head;
     this->head = nullptr;
-    this->cnt = 0;
 }
 
-// 入栈
 template<class T>
 void LinkListBaseStack<T>::push(const T &data) {
     ListNode *tmp = new ListNode;
@@ -53,7 +51,6 @@ void LinkListBaseStack<T>::pop() {
     return;
 }
 
-//返回栈的大小
 template<class T>
 int LinkListBaseStack<T>::size() const {
     return this->cnt;
