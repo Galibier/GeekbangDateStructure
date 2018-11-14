@@ -8,7 +8,7 @@ public:
     ArrayStack(int cnt);
     ~ArrayStack();
 
-    void push(T data);
+    void push(const T &data);
     void pop();
     T top();
     int size();

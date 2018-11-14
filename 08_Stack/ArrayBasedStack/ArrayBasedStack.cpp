@@ -34,7 +34,7 @@ ArrayStack<T>::~ArrayStack() {
 }
 
 template<typename T>
-void ArrayStack<T>::push(T data) {
+void ArrayStack<T>::push(const T &data) {
     if (this->flag == this->cnt) {
         cout << "The stack is full , so need to enlarge 1.5x! " << endl;
         this->cnt = int(1.5 * this->cnt);
@@ -93,6 +93,6 @@ int main(int argc, char const *argv[]) {
     arrstack.push(220);
 
     cout << "peek , not delete " << arrstack.top() << endl;
-    
+
     return 0;
 }
