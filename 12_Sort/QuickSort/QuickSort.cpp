@@ -2,12 +2,12 @@
 #include <vector>
 #include <algorithm>
 
-#include "quick_sort.hpp"
+#include "QuickSort.h"
 
 void test_quick_sort(std::vector<int> test_data) {
     quick_sort(test_data.begin(), test_data.end());
     std::transform(test_data.begin(), test_data.end(),
-                   std::ostream_iterator<int>(std::cout, " "), [](int i){ return i; });
+                   std::ostream_iterator<int>(std::cout, " "), [](int i) { return i; });
     std::cout << '\n';
 }
 

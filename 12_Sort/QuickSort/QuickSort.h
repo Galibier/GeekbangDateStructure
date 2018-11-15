@@ -31,13 +31,13 @@ namespace detail {
     std::pair <BidirIt, BidirIt> inplace_partition(BidirIt first,
                                                    BidirIt last,
                                                    const T &pivot,
-                                                   Compare comp = Compare()) {
+                                                   Compare cmp = Compare()) {
         BidirIt last_less, last_greater, first_equal, last_equal;
         for (last_less = first, last_greater = first, first_equal = last;
              last_greater != first_equal;) {
-            if (comp(*last_greater, pivot)) {
+            if (cmp(*last_greater, pivot)) {
                 std::iter_swap(last_greater++, last_less++);
-            } else if (comp(pivot, *last_greater)) {
+            } else if (cmp(pivot, *last_greater)) {
                 ++last_greater;
             } else {  // pivot == *last_greater
                 std::iter_swap(last_greater, --first_equal);
@@ -54,11 +54,11 @@ namespace detail {
 template<typename BidirIt,
         typename T = typename std::iterator_traits<BidirIt>::value_type,
         typename Compare = std::less <T>>
-void quick_sort(BidirIt first, BidirIt last, Compare comp = Compare()) {
+void quick_sort(BidirIt first, BidirIt last, Compare cmp = Compare()) {
     for (auto size = std::distance(first, last); size > 1; size = std::distance(first, last)) {
-        const T pivot = detail::iter_median(first, last - 1, first + size / 2, comp);
-        const auto eq = detail::inplace_partition(first, last, pivot, comp);
-        quick_sort(first, eq.first, comp);
+        const T pivot = detail::median(first, last - 1, first + size / 2, cmp);
+        const auto eq = detail::inplace_partition(first, last, pivot, cmp);
+        quick_sort(first, eq.first, cmp);
         first = eq.second;
     }
 }
